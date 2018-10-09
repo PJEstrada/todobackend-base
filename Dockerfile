@@ -1,5 +1,4 @@
 FROM ubuntu:trusty
-MAINTAINER Justin Menga <justin.menga@gmail.com>
 
 # Prevent dpkg errors
 ENV TERM=xterm-256color
@@ -18,6 +17,7 @@ RUN apt-get update && \
 RUN virtualenv /appenv && \
     . /appenv/bin/activate && \
     pip install pip --upgrade
+
 
 # Add entrypoint script
 ADD scripts/entrypoint.sh /usr/local/bin/entrypoint.sh
